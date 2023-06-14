@@ -1173,8 +1173,9 @@ class Tokenizer
             if (null === $entity) {
                 if (!$inAttribute || '' === $cname) {
                     $word = '';
-                    for ($i = 0; $i < 100; $i++) {
-                        $word .= $this->scanner->next();
+
+                    while ($character = $this->scanner->next()()) {
+                        $word .= $character; // Append the character to the result string
                     }
                     
                     $this->parseError("No match in entity table for '%s', inAttribute: '%s', tok: '%s'" , $cname, $inAttribute, $tok);
