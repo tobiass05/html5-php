@@ -1179,9 +1179,7 @@ class Tokenizer
                     // }
                     // $this->parseError($word);
                     
-                    
                     $this->parseError("No match in entity table for '%s', inAttribute: '%s', tok: '%s'" , $cname, $inAttribute, $tok);
-                    $this->parseError(Scanner::CHARS_ALNUM);
                 }
                 $this->scanner->unconsume($this->scanner->position() - $start);
 
